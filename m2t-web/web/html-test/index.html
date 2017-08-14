@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="assets/3rd/jsuml2/UDStyle.css" media="screen" />
+        <link rel="stylesheet" href="assets/3rd/bootstrap/bootstrap.css" />
+        <link rel="stylesheet" href="assets/3rd/codemirror/codemirror.css" />
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" />
+        <link rel="stylesheet" href="assets/css/app/app.css" />
+
+        <title>UML</title>
+    </head>
+    <body class="cbp-spmenu-push">
+    <!--
+        <%
+            String user = null;
+            if(session.getAttribute("user") == null) {
+                response.sendRedirect("login.jsp");
+            } else {
+                user = (String) session.getAttribute("user");
+            }
+        %>
+    -->
+
+
+    <!--
+        navbar-fixed-top http://getbootstrap.com/examples/navbar-fixed-top/
+    -->
+
+        <nav class="navbar navbar-default">
+            <div class="container-menu-fixed">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">UML Acessibility</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul id="settings" class="nav navbar-nav navbar-right">
+                        <li><a href="#">Imprmir nome do usuario</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Configurações<span class="caret"></span></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="dropdown-header">Dados pessoais</li>
+                                <li><a href="#">Perfil</a></li>
+
+                                <li class="divider"></li>
+                                <li class="dropdown-header">Arquivos</li>
+                                <li><a href="#">Listar diagramas</a></li>
+                                <li><a href="#">Compartilhar diagrama</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" data-toggle="modal" data-target="#myModal">Novo diagrma</a></li>
+                        <li><a href="#">Sair</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+        <section id="modal-novo-diagrama">
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="exampleModalLabel">Escolha o tipo de diagrama</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form id="novo-diagrama" action="">
+                                <div class="form-group">
+                                    <label for="diagramas" class="control-label">Diagramas</label>
+                                    <div  class="btn-group">
+                                        <button type="button" class="btn btn-default">Escolha</button>
+                                        <button id="diagramas" type="button" class="btn btn-default  dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                            <span class="caret"></span>
+                                            <span class="sr-only">Toggle Dropdown</span>
+                                            </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Caso de uso</a></li>
+                                            <li><a href="#">-</a></li>
+                                            <li><a href="#">-</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="modos" class="control-label">Modo</label>
+                                    <div  class="btn-group">
+                                        <button type="button" class="btn btn-default">Escolha</button>
+                                        <button id="modos" type="button" class="btn btn-default  dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                            <span class="caret"></span>
+                                            <span class="sr-only">Toggle Dropdown</span>
+                                            </button>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Textual</a></li>
+                                            <li><a href="#">Gráfico</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <section class="content">
+
+                <section class="wrapper-table">
+                    <form action="">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr id="line1" class="line relative">
+                                    <th class="title">#</th>
+                                    <th class="title">Nome</th>
+                                    <th class="title">Tipo</th>
+                                    <th class="title">Compartilhado</th>
+                                    <th class="title">Compartilhar</th>
+                                    <th class="title">Visão Texto</th>
+                                    <th class="title">Visão Gráfica</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="line2" class="line">
+                                    <th class="text-center" scope="row">2</th>
+                                    <td class="text-center dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">diagrama 2<span class="caret"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li class="dropdown-header">Abrir</li>
+                                            <li><a href="#">Texto</a></li>
+                                            <li><a href="#">Gráfico</a></li>
+                                        </ul>
+                                    </td>
+                                    <td class="text-center">Sequence</td>
+                                    <td class="last-col relative">
+                                        <span class="text">-</span>
+                                    </td>
+
+                                    <td id="c2" class="compartilhar">
+                                        <form id="form2" name="formcompartilhas2" class="" action="">
+                                            <input id="btn2" type="submit" class="hidden btn-default button" alt="compartilhar" value="comparilhar" />
+                                        </form>
+                                    </td>
+
+                                    <td class="text-center">
+                                        <label for="textual">Texto</label>
+                                        <input type="radio" name="sex" id="textual" value="textual" />
+                                    </td>
+                                    <td class="text-center">
+                                        <label for="grafico">Texto</label>
+                                        <input type="radio" name="sex" id="grafico" value="grafico" />
+                                    </td>
+                                </tr>
+
+                                <tr id="line3" class="line">
+                                    <th class="text-center" scope="row">2</th>
+                                    <td class="text-center dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">diagrama 2<span class="caret"></span></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li class="dropdown-header">Abrir</li>
+                                            <li><a href="#">Texto</a></li>
+                                            <li><a href="#">Gráfico</a></li>
+                                        </ul>
+                                    </td>
+                                    <td class="text-center">Sequence</td>
+                                    <td class="last-col relative">
+                                        <span class="text">Luque</span>
+                                    </td>
+
+                                    <td id="c3" class="compartilhar">
+                                        <form id="form3" name="formcompartilhas3" class="" action="">
+                                            <input id="btn3" type="submit" class="hidden btn-default button" alt="compartilhar" value="comparilhar" />
+                                        </form>
+                                    </td>
+
+                                    <td class="text-center">
+                                        <label for="textual">Texto</label>
+                                        <input type="radio" name="sex" id="textual" value="textual" />
+                                    </td>
+                                    <td id="c3" class="text-center">
+                                        <label for="grafico">Texto</label>
+                                        <input type="radio" name="sex" id="grafico" value="grafico" />
+                                    </td>
+
+                                </tr>
+
+                                <tr id="line4" class="line">
+                                    <th class="text-center" scope="row">3</th>
+                                    <td class="text-center dropdown">
+                                        <form action="">
+                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">diagrama 3<span class="caret"></span></a>
+
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li class="dropdown-header">Abrir</li>
+                                                <li><a href="#">Texto</a></li>
+                                                <li><a href="#">Gráfico</a></li>
+                                            </ul>
+
+                                        </form>
+
+                                    </td>
+                                    <td class="text-center">Activity</td>
+                                    <td class="last-col relative">
+                                        <span class="text">-</span>
+                                    </td>
+
+                                    <td id="c4" class="compartilhar">
+                                        <form id="form4" name="formcompartilhas4" class="" action="">
+                                            <input id="btn4" type="submit" class="hidden btn-default button" alt="compartilhar" value="comparilhar" />
+                                        </form>
+                                    </td>
+
+
+                                    <td class="text-center">
+                                        <label for="textual">Texto</label>
+                                        <input type="radio" name="sex" id="textual" value="textual" />
+                                    </td>
+                                    <td class="text-center">
+                                        <label for="grafico">Texto</label>
+                                        <input type="radio" name="sex" id="grafico" value="grafico" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </form>
+
+                </section>
+
+            </section>
+        </section>
+
+
+
+        <script type="application/javascript" src="assets/3rd/jquery.js"></script>
+        <script type="application/javascript" src="assets/3rd/jsuml2/UDCore.js"></script>
+        <script type="application/javascript" src="assets/3rd/jsuml2/UDModules.js"></script>
+        <script type="application/javascript" src="assets/3rd/bootstrap/js/bootstrap_min.js"></script>
+        <script type="application/javascript" src="assets/3rd/bootstrap/js/collapse.js"></script>
+        <script type="application/javascript" src="assets/3rd/codemirror/codemirror.js"></script>
+        <script type="application/javascript" src="assets/3rd/codemirror/mode/javascript.js"></script>
+        <script type="application/javascript" src="assets/3rd/mousetrap/mousetrap_min.js"></script>
+        <script type="application/javascript" src="assets/3rd/classie.js"></script>
+        <script type="application/javascript" src="assets/js/app/websocket.js"></script>
+        <script type="application/javascript" src="assets/js/app/libUseCase.js"></script>
+        <script type="application/javascript" src="assets/js/app/app_textual.js"></script>
+        <script type="application/javascript">
+            // javasript para carregar o menu que aparece ao apertar o botao 'arquivo'
+            /* var loadMenu = (function () {
+                var menuLeft = document.getElementById('file');
+                var callMenu = document.getElementById('callMenu');
+
+                callMenu.addEventListener('click', function(event){
+                    console.log(event);
+                    classie.toggle( this, 'active' );
+                    classie.toggle( menuLeft, 'cbp-spmenu-open' );
+                }, false);
+            }()); */
+
+
+            window.onload = function(){
+                NodeList.prototype.forEach = Array.prototype.forEach;
+                HTMLCollection.prototype.forEach = Array.prototype.forEach;
+                var lineTable = document.querySelectorAll('table>tbody>tr.line');
+
+                lineTable.forEach(function(e) {
+                    //console.log(e);
+                    ['mouseover', 'mouseout'].forEach(function(nameEvent) {
+                        //alert(nameEvent);
+                        e.addEventListener(nameEvent, function(){
+                            var element = this;
+                            //console.dir(element.childNodes[9].firstElementChild);
+                            var child = element.childNodes[9].firstElementChild;
+                            //console.log(child.tagName);
+
+                            if(child.tagName === 'INPUT') {
+                                classie.toggle(child, 'hidden');
+                            } else {
+                                child = child.childNodes[1];
+                                //console.log('form', child);
+                                classie.toggle(child, 'hidden');
+                            }
+                            //console.log(typeof element);
+                            //var td = this.children[4];
+                            //console.dir(td);
+
+                            //
+                        }, false);
+                    });
+
+                })
+                //console.dir(document.querySelector('table>tbody>tr.line').addEventListener);
+                //return false;
+
+                console.log($('#modal-novo-diagrama'));
+
+
+                $('#myModal').on('show.bs.modal', function(evt) {
+                    console.log(evt);
+                });
+            };
+            // tab menu principal
+/*
+            $('#main-tab').on('click', function(e) {
+                e.preventDefault();
+                $(this).tab('show');
+            })
+
+            $('#grafico').click(function () {
+                if(!$(this).hasClass('active-tab-menu')) {
+                    var ok = processText();
+                    if(ok) showTab(this);
+                }
+            });
+
+            $('#textual').click(function(){
+                document.getElementById("listErrors").innerHTML = "";
+                processGraphic();
+                showTab(this);
+            });
+
+            var showTab = function(tab) {
+                var a = $(tab);
+                var active_tab_class = 'active-tab-menu';
+                var the_tab = '.' + a.attr('data-tab');
+                console.log(a);
+
+                $('.tabs-menu ul li a').removeClass(active_tab_class);
+                a.addClass(active_tab_class);
+
+                $('.tabs-content .tabs').css({
+                    'display' : 'none'
+                });
+
+                $(the_tab).show();
+
+                return false;
+            };
+
+            function processText() {
+                var textDiagram = document.getElementById("textDiagram").value;
+                obj = undefined;
+                obj = umlUC('#umlUC').init();
+
+                var result = false;
+                $.ajax({
+                    url: "TextToGraphic",
+                    type: "POST",
+                    async: false,
+                    data: {diagram: textDiagram},
+                    success: function(data) {
+                        console.log(data);
+                        if(data.charAt(0) != '<') {
+                            processError(data);
+                            return;
+                        }
+
+                        try {
+                            obj.importFromXMLText(data);
+                        } catch (e) {
+                            alert("Não foi possível criar o diagrama");
+                            console.log(e);
+                            return;
+                        }
+                        result = true;
+                    },
+                    error: function(err) {
+                        console.log(err);
+                    }
+                });
+
+                return result;
+            };
+
+            function processError(error) {
+                var listErrors = document.getElementById("listErrors");
+                listErrors.innerHTML = "";
+                var errors = error.split("\n");
+
+                errors.forEach(function(err){
+                    listErrors.appendChild(document.createTextNode(err));
+                    listErrors.appendChild(document.createElement("br"));
+                });
+            };
+
+            function processGraphic() {
+                if(obj != undefined) {
+                    console.log(obj._diagram);
+
+                    var texto = obj.exportToXML();
+
+                    $.ajax({
+                        url: "GraphicToText",
+                        type: "POST",
+                        async: false,
+                        data: {diagram: texto},
+                        success: function(data) {
+                            console.log(data);
+                            document.getElementById("textDiagram").value = data;
+                        },
+                        error: function(err) {
+                            console.log(err);
+                        }
+                    });
+                }
+            };
+
+            */
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,50 @@
+
+****** Opened file log at 28/08/2015 09:21:31 .Tracer (STIWOW64) , called from [wiawow64.exe::0x1a7c]
+Severity TracerName [Process::ThreadId] Time MessageText
+
+e STIWOW64 [wiawow64.exe::0x1a7c]  	WiaCreateDeviceRegistryList failed
+e STIWOW64 [wiawow64.exe::0x1a7c]  	Loading USD, cannot open device registry key.
+
+******Closed trace log on 28/08/2015 09:21:31 Tracer (STIWOW64) , called from [wiawow64.exe::0x1a7c]
+
+****** Opened file log at 26/09/2015 12:13:17 .Tracer (STIWOW64) , called from [wiawow64.exe::0x2bd4]
+Severity TracerName [Process::ThreadId] Time MessageText
+
+e STIWOW64 [wiawow64.exe::0x2bd4]  	USD failed Initialize method, returned error code (hex)=!x!.
+
+******Closed trace log on 26/09/2015 12:13:17 Tracer (STIWOW64) , called from [wiawow64.exe::0x2bd4]
+
+****** Opened file log at 26/09/2015 12:13:17 .Tracer (STIWOW64) , called from [wiawow64.exe::0x2f24]
+Severity TracerName [Process::ThreadId] Time MessageText
+
+e STIWOW64 [wiawow64.exe::0x2f24]  	USD failed Initialize method, returned error code (hex)=!x!.
+
+******Closed trace log on 26/09/2015 12:13:17 Tracer (STIWOW64) , called from [wiawow64.exe::0x2f24]
+
+****** Opened file log at 26/09/2015 12:13:21 .Tracer (STIWOW64) , called from [wiawow64.exe::0xa74]
+Severity TracerName [Process::ThreadId] Time MessageText
+
+e STIWOW64 [wiawow64.exe::0xa74]  	USD failed Initialize method, returned error code (hex)=!x!.
+
+******Closed trace log on 26/09/2015 12:13:21 Tracer (STIWOW64) , called from [wiawow64.exe::0xa74]
+
+****** Opened file log at 26/09/2015 12:13:21 .Tracer (STIWOW64) , called from [wiawow64.exe::0x2a3c]
+Severity TracerName [Process::ThreadId] Time MessageText
+
+e STIWOW64 [wiawow64.exe::0x2a3c]  	USD failed Initialize method, returned error code (hex)=!x!.
+
+******Closed trace log on 26/09/2015 12:13:21 Tracer (STIWOW64) , called from [wiawow64.exe::0x2a3c]
+
+****** Opened file log at 26/09/2015 12:17:32 .Tracer (STIWOW64) , called from [wiawow64.exe::0x1d8]
+Severity TracerName [Process::ThreadId] Time MessageText
+
+e STIWOW64 [wiawow64.exe::0x1d8]  	USD failed Initialize method, returned error code (hex)=!x!.
+
+******Closed trace log on 26/09/2015 12:17:32 Tracer (STIWOW64) , called from [wiawow64.exe::0x1d8]
+
+****** Opened file log at 26/09/2015 12:17:32 .Tracer (STIWOW64) , called from [wiawow64.exe::0x1504]
+Severity TracerName [Process::ThreadId] Time MessageText
+
+e STIWOW64 [wiawow64.exe::0x1504]  	USD failed Initialize method, returned error code (hex)=!x!.
+
+******Closed trace log on 26/09/2015 12:17:32 Tracer (STIWOW64) , called from [wiawow64.exe::0x1504]

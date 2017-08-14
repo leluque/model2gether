@@ -1,0 +1,569 @@
+@import url("util.css");
+@import url("profile.css");                         // regras css para o formulario do perfil do usuário
+@import url("menu-outside-left-overflow.css");
+// variables
+@branco: #ffffff;
+@preto: #333333;
+
+@verde-flat: rgb(71, 174, 115);
+@vermelho-flat: rgb(251, 105, 100);
+@azul-flat: rgb(52, 152, 219);
+@preto-flat:rgb(51, 51, 51);
+
+@cinza-flat: #7f8c8d;
+@cinza-claro-flat:rgb(189, 195, 199);
+
+.sprite-icon-menu {
+    background: url('../../images/pattern/spriteMenu.jpg') no-repeat;
+}
+
+body {
+    background: url('../../images/pattern/geometry2.png') repeat fixed;
+    //background-attachment: fixed;
+}
+
+.container {
+    width: 100%;
+    .wrapper-title {
+        margin: 30px 0;
+    }
+    .content {
+        width: 940px;
+        margin: 0 auto;
+        .wrapper-link {
+            width: 600px;
+            margin: 0 auto;
+            #sign-up {
+                display: block;
+                color: @cinza-flat;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+
+/* regras css para index.jsp */
+// regra para o menu principal
+
+.tab-content-main-menu {
+    background: @branco;
+    .wrapper-submenu {
+        .app-menu {
+            margin: 0px 0px 5px 0px
+        }
+    }
+}
+
+.wrapper-main-menu {
+    width: 100%;
+    @media screen {
+    }
+    .menu {
+        width: 940px;
+        margin: 0 auto;
+    }
+}
+
+.item {
+    .command-main-menu {
+        width: 95%;
+        height: 50px;
+        background: @cinza-claro-flat;
+        color:@branco;
+        padding: 18px;
+        .text {
+            font: normal normal normal 16px Arial;
+            text-transform: uppercase;
+        }
+        .icon {
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+        }
+    }
+
+    .command {
+        text-align: center;
+        border: 0;
+        background: transparent;
+        width: 100%;
+        .text {
+            font: normal normal normal 13px Arial;
+            text-transform: uppercase;
+        }
+        .icon {
+            width: 45px;
+            height: 45px;
+            margin: 0 auto;
+            display: block;
+        }
+    }
+
+    .create-act {
+        .icon {
+            background-position: -199px 2px;
+
+        }
+    }
+    .create-uc {
+        .icon {
+            background-position: -159px 2px;
+        }
+    }
+    .create-rel {
+        .icon {
+            background-position: -75px 2px;
+        }
+    }
+    .create-inc {
+        .icon {
+            background-position: -38px 2px;
+        }
+    }
+    .create-ext {
+        .icon {
+            background-position: 0px 2px;
+        }
+    }
+    .delete_elm {
+        .icon {
+            background-position: -234px 2px;
+        }
+    }
+    .update_elm {
+        .icon {
+            background-position: -275px 2px;
+        }
+    }
+    .create-inherit {
+        .icon {
+            background-position: -118px 2px;
+        }
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+/*
+#diagrams {
+    .app-menu {
+        .item {
+
+        }
+    }
+}
+*/
+/* regra css para os menus */
+
+#canvasUML, #umlUC {
+    border: 1px solid black;
+    // height: 500px !important;
+    display: block;
+    width: 100% !important;
+    background: @branco;
+}
+
+#textDiagram {
+    width: 100%;
+    margin: 0 !important;
+}
+
+@media screen  {
+    @media (min-width: 940px) {
+        .wrapper-canvas {
+            .content {
+                width: 940px;
+                margin: 0 auto;
+                border: 1px solid green;
+            }
+        }
+    }
+
+    @media (min-width: 800px) and (max-width: 940px) {
+        .wrapper-canvas {
+            .content {
+                width: 95%;
+                margin: 0 auto;
+                border: 1px solid red;
+            }
+        }
+    }
+
+    @media (max-width: 799px) {
+        .wrapper-canvas {
+            .content {
+                width: 799px;
+                margin: 0 auto;
+                border: 1px solid red;
+            }
+        }
+    }
+}
+
+.wrapper-table {
+    .table {
+        background: #fff;
+        tbody {
+            .wrapper-option-edit {
+                .option-edit {
+                    color: @azul-flat;
+                    font: 400 normal normal 12px Arial;
+                }
+            }
+        }
+    }
+}
+
+.wrapper-title .title {
+    text-align: center;
+    text-transform: uppercase;
+    color: @preto;
+    margin: 32px 0px;
+}
+
+.menu-left {
+    background: transparent;
+    border: 0
+}
+
+.ud_popup {
+    top: 0
+}
+
+.wrapper-canvas {
+    background: transparent;
+    width: 100%;
+    border: 0;
+    /* float: right; */
+}
+
+.wrapper-canvas .wrapper-title .title {
+    text-align: center
+}
+
+
+
+/* fim regra css para index */
+
+
+.clearfix:after {
+    content: '.';
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+/* Menu das abas */
+.tabs-menu ul {
+    list-style: none;
+}
+.tabs-menu ul li {
+    float: left;
+}
+.tabs-menu ul li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
+
+.tabs-menu ul li a.active-tab-menu {
+    background: rgba(90, 86, 86, 0.95);
+    color: @branco;
+}
+
+/* Conte?do das abas */
+.tabs {
+    display: none;
+}
+.first-tab {
+    display: block;
+}
+
+
+
+/* fim index.jsp */
+
+
+// regras para criar um botao accessivel
+
+  [role="button"] {
+   padding:3px;
+   border: 1px solid #CCC;
+  }
+
+  [role="button"][aria-pressed="true"] {
+   border: 2px solid #000;
+  }
+
+
+/* personalizar file upload */
+
+.app-menu-general {
+    .item-subtitle {
+        background: rgba(90, 86, 86, 0.95);
+        .subtitle {
+            text-align: center;
+            font: normal normal normal 23px Arial;
+            padding: 30px 0;
+            text-transform: uppercase;
+            color: @branco;
+        }
+    }
+    .item {
+        border-bottom: 1px solid #737474;
+        .command-button {
+            background: transparent;
+            border: 0;
+            display: block;
+            color: #fff;
+            width: 100%;
+            height: 49px;
+        }
+        &:hover {
+            background: rgba(90, 86, 86, 0.95);
+        }
+    }
+}
+
+.file-upload-input {
+    border: none;
+    width: 50%;
+    height: 40px;
+    padding: 0px 0px 0px 1px;
+    // background-color: @cinza-claro-flat;
+    float: left; /* IE 9 Fix */
+    /*
+    &:hover, &:focus {
+        background-color: @cinza-claro-flat * 30%;
+        outline: none;
+    }
+    */
+}
+
+.file-upload-button {
+    width: 50%;
+    height: 40px;
+    cursor: pointer;
+    display: inline-block;
+    text-transform: uppercase;
+    font: normal normal normal 12px Arial;
+    border: none;
+    margin-left: -1px;
+    background-color: #727577;
+    color: #ffffff;
+    float: left;
+    -moz-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+
+    &:hover {
+        background-color: #555657;
+    }
+}
+
+
+/* copiaando regra css da classe container */
+@media screen {
+    @media (min-width: 768px) {
+        .container-menu-fixed {
+          width: 750px;
+        }
+    }
+    @media (min-width: 992px) {
+        .container-menu-fixed {
+            width: 970px;
+        }
+    }
+    @media (min-width: 1200px) {
+        .container-menu-fixed {
+            width: 1170px;
+        }
+    }
+ /*
+    @media (min-width: 1200px) {
+        .container-menu-fixed {
+            width: 1170px;
+        }
+    }
+*/
+
+}
+
+.container-menu-fixed {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* regra css para index */
+
+// regra para tabela que lista os diagramas criados
+.table {
+    .line {
+        .title {
+            text-align: center;
+        }
+        .last-col {
+            text-align: center;
+        }
+        .compartilhar {
+            width: 200px;
+        }
+        .button {
+            //display: inline-block;
+            font-weight: 400;
+            text-align: center;
+            vertical-align: middle;
+            right: 8px;
+            top: 4px;
+            height: 40px;
+            line-height: 15px;
+            padding: 0px 10px;
+            border-radius: 4px;
+            background: linear-gradient(to bottom, #FFFFFE 0%, #F4FAFF 100%) repeat scroll 0% 0% transparent;
+            border: 1px solid #5EB0F0;
+            -moz-user-select: none;
+            width: 90%;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
+
+#modal-novo-diagrama, #modal-compartilhar-diagrama {
+    #novo-diagrama, #compartilhar-diagrama {
+        .form-group {
+            .control-label {
+                width: 150px;
+            }
+        }
+    }
+}
+
+#modal-compartilhar-diagrama {
+    #compartilhar {
+
+        .modal-dialog {
+
+            .table {
+                ;
+                .table-head{
+                    .line {
+                        .title {
+                            text-align: center;
+                        }
+                    }
+                }
+
+                .table-body {
+                    .line {
+                        td {}
+                        .cell {
+                            a {
+                                display: block;
+                                text-align: center;
+                                &:hover {
+                                    text-decoration: overline;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#settings {
+    #user-name {
+        line-height: 49px;
+        margin: 0px 28px 0px 0px;
+    }
+}
+
+.button-disabled  {
+    background-color: #FAFAFA !important;
+    color: #ccc;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    right: 8px;
+    top: 4px;
+    height: 40px;
+    line-height: 15px;
+    padding: 0 10px;
+    border-radius: 4px;
+    border: 1px solid #ADB7BE;
+    -moz-user-select: none;
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+}
+
+.message-error {
+    width: inherit;
+    .wrapper-text {
+        width: 450px;
+        margin: 0 auto;
+        padding: 20px 0px 20px;
+        .text {
+            color: #F7263E;
+            font: 700 20px sans-serif;
+            text-align: center;
+        }
+    }
+}
+
+.message-success {
+    width: inherit;
+    .wrapper-text {
+        width: 450px;
+        margin: 0 auto;
+        padding: 20px 0px 20px;
+        .text {
+            color: #23BD18;
+            font: 700 20px sans-serif;
+            text-align: center;
+        }
+    }
+}
+
+#compartilhar-diagrama {
+    .message-success {
+        width: inherit;
+        .wrapper-text {
+            width: 450px;
+            margin: 0 auto;
+            padding: 20px 0px 20px;
+            .text {
+                color: #23BD18;
+                font: 700 14px sans-serif;
+                text-align: center;
+            }
+        }
+    }
+    .message-error {
+        width: inherit;
+        .wrapper-text {
+            width: 450px;
+            margin: 0 auto;
+            padding: 20px 0px 20px;
+            .text {
+                color: #F7263E;
+                font: 700 14px sans-serif;
+                text-align: center;
+            }
+        }
+    }
+}

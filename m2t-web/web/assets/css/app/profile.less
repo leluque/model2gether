@@ -1,0 +1,61 @@
+// variaveis
+@branco: #ffffff;
+@preto: #333333;
+@cinza-flat: #7f8c8d;
+@cinza-claro-flat:rgb(189, 195, 199);
+
+.wrapper-form-and-menu {
+	.wrapper {
+		//background-color: @branco;
+		.panel {
+			.panel-title{
+				font: normal normal 700 23px/20px sans-serif;
+				padding: 9px 10px 10px;
+				display: block;
+			}
+			.text {
+				padding: 9px 10px 10px;
+				font: normal normal normal 13px/10px sans-serif;
+				color: @cinza-flat;
+				margin: 0;
+			}
+		}
+		.form {
+			.wrap-component-form {
+				box-sizing: border-box;
+				margin: 15px 0px;
+				.identifier {
+					display: block;
+				}
+				.text{
+					position: relative;
+					height: auto;
+					box-sizing: border-box;
+					padding: 10px;
+					font-size: 16px;
+					width: 100%;
+					padding: 6px 12px;
+					//font-size: 14px;
+					line-height: 1.42857;
+					color: #555;
+					background-color: #FFF;
+					background-image: none;
+					border: 1px solid #CCC;
+					border-radius: 4px;
+					box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset;
+					transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+
+// override bootstramin
+a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus {
+    z-index: 2;
+    color: #FFF;
+    background-color: @cinza-claro-flat !important;
+    border-color: @cinza-claro-flat !important;
+}

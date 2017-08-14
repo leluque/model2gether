@@ -1,0 +1,68 @@
+/* regra geral para qualquer meu */
+.cbp-spmenu {
+  background: rgba(150, 150, 150, 0.98);
+  position: fixed;
+}
+.cbp-spmenu .title {
+  color: #afdefa;
+  font-size: 1.9em;
+  padding: 20px;
+  margin: 0;
+  font-weight: 300;
+  background: #0d77b6;
+}
+.cbp-spmenu .item .item {
+  display: block;
+}
+/*
+.cbp-spmenu .item:hover {
+	background: #258ecd;
+}
+
+
+.cbp-spmenu .item:active {
+	background: #afdefa;
+	color: #47a3da;
+}
+*/
+/* fim da regra geral para qualquer menu*/
+.cbp-spmenu-left {
+  left: -314px;
+}
+.cbp-spmenu-left.cbp-spmenu-open {
+  left: 0px;
+}
+.cbp-spmenu-push {
+  overflow-x: hidden;
+  position: relative;
+  left: 0;
+}
+.cbp-spmenu-push-toleft {
+  left: -314px;
+}
+.cbp-spmenu,
+.cbp-spmenu-push {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.cbp-spmenu-vertical {
+  width: 314px;
+  height: 100%;
+  top: 0;
+  z-index: 1000;
+}
+.cbp-spmenu-vertical a {
+  border-bottom: 1px solid #258ecd;
+  padding: 1em;
+}
+@media screen and (max-height: 26.375em) {
+  .cbp-spmenu-vertical {
+    font-size: 90%;
+    width: 190px;
+  }
+  .cbp-spmenu-left,
+  .cbp-spmenu-push-toleft {
+    left: -190px;
+  }
+}

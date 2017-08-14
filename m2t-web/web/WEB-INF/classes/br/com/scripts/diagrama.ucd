@@ -1,0 +1,14 @@
+Diagrama "Diagrama 1"
+    Atores
+        "Ator 1",
+        "Ator 2" herda de "Ator 1".
+
+    Casos de Uso
+        "Caso de uso 1",
+        "Caso de uso 2",
+        "Caso de uso 3".
+
+    Relações
+        "Ator 1" conecta com "Caso de uso 1",
+        "Caso de uso 1" include "Caso de uso 2",
+        "Caso de uso 3" extend "Caso de uso 1".

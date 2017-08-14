@@ -1,0 +1,20 @@
+Diagrama "Clínica Médica"
+  Atores
+    "Paciente",
+    "Secretaria",
+    "Doutor".
+  Casos de Uso
+    "Cancelar Consulta",
+    "Marcar Consulta",
+    "Procurar Registro do Paciente",
+    "Pedir Remédio".
+  Relações
+    "Paciente" conecta com "Cancelar Consulta",
+    "Paciente" conecta com "Marcar Consulta",
+    "Paciente" conecta com "Pedir Remédio",
+    "Secretaria" conecta com "Cancelar Consulta",
+    "Secretaria" conecta com "Marcar Consulta",
+    "Doutor" conecta com "Pedir Remédio",
+    "Marcar Consulta" include "Procurar Registro do Paciente",
+    "Pedir Remédio" include "Procurar Registro do Paciente",
+    "Doutor" herda de "Secretaria".

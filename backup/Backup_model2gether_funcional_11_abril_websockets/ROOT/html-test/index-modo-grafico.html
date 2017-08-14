@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="assets/3rd/jsuml2/UDStyle.css" media="screen" />
+        <link rel="stylesheet" href="assets/3rd/bootstrap/bootstrap.css" />
+        <link rel="stylesheet" href="assets/3rd/codemirror/codemirror.css" />
+
+        <link rel="stylesheet" href="assets/css/app/app.css" />
+        <title>UML</title>
+    </head>
+    <body class="cbp-spmenu-push">
+    <!--
+        <%
+            String user = null;
+            if(session.getAttribute("user") == null) {
+                response.sendRedirect("login.jsp");
+            } else {
+                user = (String) session.getAttribute("user");
+            }
+        %>
+    -->
+
+
+        <!--
+            navbar-fixed-top http://getbootstrap.com/examples/navbar-fixed-top/
+        -->
+
+        <nav class="navbar navbar-default">
+            <div class="container-menu-fixed">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">UML Acessibility</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="hidden none nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li class="divider"></li>
+                            <li class="dropdown-header">Nav header</li>
+                            <li><a href="#">Separated link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                          </ul>
+                        </li>
+                    </ul>
+                    <ul id="settings" class="nav navbar-nav navbar-right">
+                        <li><a href="#">Configuração</a></li>
+                        <li><a href="#">Compartilhar projeto</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </nav>
+
+        <section class="container">
+            <!-- Menu geral-->
+            <section id="file" class="hidden cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left wrapper-submenu">
+                <ul id="menu-general" class="app-menu-general">
+                    <li class="item-subtitle">
+                        <h3 class="subtitle">Menu Geral</h3>
+                    </li>
+                    <li class="item">
+                        <form class="" action="POST">
+                            <label class="none hidden label"  for="import">Importar diagrama</label>
+                            <input type="file" class="none hidden" style="position: absolute; left: -9999px;" name="pic" id="import" accept=".xml" />
+                            <input type="text" class="file-upload-input" placeholder="importar diagrama" disabled="true" />
+                            <button type="button" class="file-upload-button" tabindex="-1">Importar diagrama</button>
+                            <br class="clear-both" />
+                        </form>
+                    </li>
+                    <li class="item">
+                        <button class="command-button export">Exportar diagrama em xml</button>
+                    </li>
+                    <li class="item">
+                        <button class="command-button gen-image">Gerar Imagem PNG</button>
+                    </li>
+                    <li class="item">
+                        <button class="command-button gen-image">Gerar Imagem PNG</button>
+                    </li>
+                </ul>
+            </section>
+
+
+
+            <section class="content">
+                <section class="wrapper-main-menu">
+                    <!--
+                    <ul id="main-tab" class="menu nav nav-tabs" role="tablist">
+                        <li role="presentation" class="item">
+                            <a class="" id="callMenu" href="#general" aria-controls="general" role="tab" data-toggle="tab">Arquivo</a>
+                        </li>
+                        <li role="presentation" class="item active">
+                            <a class="create" href="#diagrams" aria-controls="diagrams" role="tab" data-toggle="tab">Criar diagrama</a>
+                        </li>
+                    </ul>
+                    -->
+                </section>
+
+                <section class="tab-content-main-menu">
+
+                    <section id="uc" class="wrapper-submenu">
+                        <ul id="menu-uc" class="app-menu row">
+                            <li class="item col-md-2">
+                                <button id="create-act" class="command create-act">
+                                    <i class="icon"></i>
+                                    <span class="text">Adicionar Ator</span>
+                                </button>
+                            </li>
+                            <li class="item col-md-2">
+                                <button id="create-uc" class="command create-uc">
+                                    <i class="icon"></i>
+                                    <span class="text">Adicionar Caso de Uso</span>
+                                </button>
+                            </li>
+                            <li class="item col-md-2">
+                                <button id="create-rel" class="command create-rel">
+                                    <i class="icon"></i>
+                                    <span class="text">Adicionar Relação</span>
+                                </button>
+                            </li>
+                            <li class="item col-md-2">
+                                <button id="create-inc" class="command create-inc">
+                                    <i class="icon"></i>
+                                    <span class="text">Adicionar Include</span>
+                                </button>
+                            </li>
+                            <li class="item col-md-2">
+                                <button id="create-ext" class="command create-ext">
+                                    <i class="icon"></i>
+                                    <span class="text">Adicionar Extend</span>
+                                </button>
+                            </li>
+                            <li class="item col-md-2">
+                                <button id="delete_elm" class="command delete_elm">
+                                    <i class="icon"></i>
+                                    <span class="text">Excluir Elemento</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </section>
+
+                </section>
+
+
+                <section class="wrapper-action">
+
+                    <div class="wrapper-canvas">
+                        <div class="content">
+                            <div>
+
+<!--
+                                <div class="tabs-menu clearfix">
+                                    <ul class="row">
+                                        <li class="col-md-6"><a id="grafico" class="active-tab-menu" href="javascript:void(0)" data-tab="tab1">Modo Gráfico</a></li>
+                                        <li class="col-md-6"><a id="textual" href="javascript:void(0)" class="" data-tab="tab2">Modo Textual</a></li>
+                                    </ul>
+                                </div>
+                                -->
+                                <div class="col-md-12">
+                                    <!-- id="umlUC canvasUML" -->
+                                    <div id="umlUC" class="uml umlUC"></div>
+                                </div> <!-- .tab1 -->
+                                <!--
+                                <div class="tab2 tabs">
+                                    <div class="uml umlUC">
+                                        <div id="listErrors"></div>
+                                        <textarea id="textDiagram" cols="100" rows="20" style="margin: 10px"></textarea>
+                                    </div>
+                                </div>
+                                -->
+                                <br class="clear-both" />
+                            </div> <!-- .tabs -->
+                        </div> <!-- .content -->
+                    </div>
+                    <br class="clear-both" />
+                </section>
+            </section>
+        </section>
+        <!--
+        <script data-main="assets/js/app/load" src="assets/3rd/require.js"></script>
+        -->
+        <script type="application/javascript" src="assets/3rd/jquery.js"></script>
+        <script type="application/javascript" src="assets/3rd/classie.js"></script>
+
+        <script type="application/javascript" src="jsuml2/js-core/UDCore.js"></script>
+        <script type="application/javascript" src="jsuml2/js-core/UDModules.js"></script>
+
+        <script type="application/javascript" src="assets/3rd/bootstrap/js/bootstrap_min.js"></script>
+        <script type="application/javascript" src="assets/3rd/bootstrap/js/collapse.js"></script>
+
+        <script type="application/javascript" src="assets/js/app/websocket.js"></script>
+        <script type="application/javascript" src="assets/js/app/libUseCase.js"></script>
+
+        <script type="application/javascript" src="assets/js/app/mapKeyBoard.js"></script>
+        <script type="application/javascript" src="assets/js/app/app.js"></script>
+
+        <script type="text/javascript">
+            // javasript para carregar o menu que aparece ao apertar o botao 'arquivo'
+            /* var loadMenu =  (function () {
+                var menuLeft = document.getElementById('file');
+                var callMenu = document.getElementById('callMenu');
+
+                callMenu.addEventListener('click', function(event){
+                    console.log(event);
+                    classie.toggle( this, 'active' );
+                    classie.toggle( menuLeft, 'cbp-spmenu-open' );
+                }, false);
+            }());
+            */
+            // tab menu principal
+
+            $('#main-tab').on('click', function(e) {
+                e.preventDefault();
+                $(this).tab('show');
+            })
+
+            $('#grafico').click(function () {
+                if(!$(this).hasClass('active-tab-menu')) {
+                    var ok = processText();
+                    if(ok) showTab(this);
+                }
+            });
+
+            $('#textual').click(function(){
+                document.getElementById("listErrors").innerHTML = "";
+                processGraphic();
+                showTab(this);
+            });
+
+            var showTab = function(tab) {
+                var a = $(tab);
+                var active_tab_class = 'active-tab-menu';
+                var the_tab = '.' + a.attr('data-tab');
+                console.log(a);
+
+                $('.tabs-menu ul li a').removeClass(active_tab_class);
+                a.addClass(active_tab_class);
+
+                $('.tabs-content .tabs').css({
+                    'display' : 'none'
+                });
+
+                $(the_tab).show();
+
+                return false;
+            };
+
+            function processText() {
+                var textDiagram = document.getElementById("textDiagram").value;
+                obj = undefined;
+                obj = umlUC('#umlUC').init();
+
+                var result = false;
+                $.ajax({
+                    url: "TextToGraphic",
+                    type: "POST",
+                    async: false,
+                    data: {diagram: textDiagram},
+                    success: function(data) {
+                        console.log(data);
+                        if(data.charAt(0) != '<') {
+                            processError(data);
+                            return;
+                        }
+
+                        try {
+                            obj.importFromXMLText(data);
+                        } catch (e) {
+                            alert("Não foi possível criar o diagrama");
+                            console.log(e);
+                            return;
+                        }
+                        result = true;
+                    },
+                    error: function(err) {
+                        console.log(err);
+                    }
+                });
+
+                return result;
+            };
+
+            function processError(error) {
+                var listErrors = document.getElementById("listErrors");
+                listErrors.innerHTML = "";
+                var errors = error.split("\n");
+
+                errors.forEach(function(err){
+                    listErrors.appendChild(document.createTextNode(err));
+                    listErrors.appendChild(document.createElement("br"));
+                });
+            };
+
+            function processGraphic() {
+                if(obj != undefined) {
+                    console.log(obj._diagram);
+
+                    var texto = obj.exportToXML();
+
+                    $.ajax({
+                        url: "GraphicToText",
+                        type: "POST",
+                        async: false,
+                        data: {diagram: texto},
+                        success: function(data) {
+                            console.log(data);
+                            document.getElementById("textDiagram").value = data;
+                        },
+                        error: function(err) {
+                            console.log(err);
+                        }
+                    });
+                }
+            };
+        </script>
+
+    </body>
+</html>

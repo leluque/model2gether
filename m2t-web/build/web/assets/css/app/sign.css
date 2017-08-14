@@ -1,0 +1,83 @@
+window {
+    height: 100%;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3em;
+    font-weight: 300;
+    color: #333;
+    line-height: 2em;
+    background: #fff;
+    margin-bottom: 1em;
+    height: 100%;
+    padding-bottom: 40px;
+}
+.topSection {
+    text-align: center;
+}
+a, a:hover, a:focus {
+    color: #4aaf51;
+    text-decoration: none;
+    -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
+}
+#pageContainer {
+    margin: 0 auto 0 auto;
+}
+#pageContainer h1 {
+    font-size: 3em;
+    margin: 1em 0 0.5em 0;
+}
+#pageContainer p {
+    font-size: 1.2em;
+}
+.form-box {
+    margin-top: 1em;
+}
+.form-top {
+    overflow: hidden;
+    padding: 0 2em 0.25em 2em;
+    background: #eee;
+    -moz-border-radius: 0.5em 0.5em 0 0; -webkit-border-radius: 0.5em 0.5em 0 0; border-radius: 0.5em 0.5em 0 0;
+    text-align: left;
+    font-size: 1em;
+}
+.form-top-left {
+    float: left;
+    width: 75%;
+    padding-top: 1em;
+}
+.form-top-right {
+    float: left;
+    width: 25%;
+    font-size: 2em;
+    padding-top: 0.5em;
+    color: #337ab7;
+    text-align: right;
+}
+.form-bottom {
+    padding: 2em;
+    background: #f5f5f5;
+    -moz-border-radius: 0.5em 0.5em 0 0; -webkit-border-radius: 0.5em 0.5em 0 0; border-radius: 0.5em 0.5em 0 0;
+    text-align: left;
+}
+.form-bottom form button.action {
+    width: 100%;
+}
+.form-bottom form .input-error {
+    border-color: #4aaf51;
+}
+a.discreteLink {
+    color: #555;
+}
+a.discreteLink a:focus {
+    color: black;
+}
+a.discreteLink a:hover {
+    color: black;
+}
+.footer {
+    background: #444;
+    color: #fff;
+    text-align: left;
+    padding: 0.8em 0 0 2em;
+}
